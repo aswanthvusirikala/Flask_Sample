@@ -1,10 +1,12 @@
 from flask import Flask, render_template, request, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
+from configurations import DevelopmentConfig
 import os
 
 
 app = Flask(__name__)
+app.config.from_object(DevelopmentConfig)
 # app.secret_key = "Secret Key"
 
 #SqlAlchemy Database Configuration With Mysql
